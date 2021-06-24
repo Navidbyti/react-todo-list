@@ -1,23 +1,23 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import TodoItem from './TodoItem'
 function App(){
+const [input, setInput] = useState('');
+const [inputArr , setInputArr] = useState([])
+
     return(
-  
-        <div>
-            <input type="checkbox" id='todo1' />
-            <lable for='todo1'>Random task 1</lable><br/>
-
-            <input type="checkbox" id='todo2' />
-            <lable for='todo2'>Random task 2</lable><br/>
-
-            <input type="checkbox" id='todo3' />
-            <lable for='todo3'>Random task 3</lable><br/>
-            
-            <input type="checkbox" id='todo4' />
-            <lable for='todo4'>Random task 4</lable><br/>
-
-        </div>
+        <>
+        <label>Enter a todo item:</label>
+        <input type='text' value={input} onInput={(e)=>{setInput(e.target.value); }} />
+        <button onClick ={()=>{setInputArr([input, ...inputArr]); console.log(inputArr)}}>Submit</button>
+        {inputArr.map((item)=>{
+            return (
+            <TodoItem key = {Math.floor(Math.random()*1000)} todo = {item} />
+            )
+        }
+    )}
+        
+        </>
     )
-};
+}
 
 export default App;
