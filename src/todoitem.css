@@ -19,9 +19,15 @@ display: inline;
     background-color: rgb(22, 20, 29);
     color: white;
     float: right;
+    border-radius: 15px;
+    padding: 7px;
+    vertical-align: middle;
     
 }
 .todo-container > input{
     vertical-align: text-bottom;
     float: left;
+}
+.active{
+ text-decoration:line-through;
 }
