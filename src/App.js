@@ -25,13 +25,12 @@ function App() {
   };
 
   const removeTodo = (id) => {
-    const filterd = inputArr.filter(item => {
-        console.log(id);
+    const filterd = inputArr.filter((item) => {
+      console.log(id);
       return item.id !== id;
-      
     });
     setInputArr(filterd);
-    console.log(inputArr)
+    console.log(inputArr);
   };
 
   return (
@@ -39,33 +38,27 @@ function App() {
       <p>Enter a todo item:</p>
 
       <div className={styles.submitContainer}>
-          <form>
-        <input
-          name="input"
-          className={styles.mainInput}
-          type="text"
-          value={todoItem.text}
-          onChange={(e) => handleInputChange(e)}
-        />
-        <button
-          className={styles.submitBtn}
-          onClick={(e) => {
+        <form>
+          <input
+            name="input"
+            className={styles.mainInput}
+            type="text"
+            value={todoItem.text}
+            onChange={(e) => handleInputChange(e)}
+          />
+          <button
+            className={styles.submitBtn}
+            onClick={(e) => {
               e.preventDefault();
-            clearInput();
-          }}
-        >
-          Submit
-        </button>
+              clearInput();
+            }}
+          >
+            Submit
+          </button>
         </form>
       </div>
       {inputArr.map((item) => {
-        return (
-          <TodoItem
-            removeTodo={removeTodo}
-            key={item.id}
-            {...item}
-          />
-        );
+        return <TodoItem removeTodo={removeTodo} key={item.id} {...item} />;
       })}
     </div>
   );
