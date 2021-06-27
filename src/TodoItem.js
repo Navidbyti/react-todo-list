@@ -31,6 +31,7 @@ function TodoItem({ id, isComplete, text, removeTodo }) {
       <button
         onClick={(e) => {
           loadEditField(e);
+          
         }}
       >
         Edit
@@ -38,10 +39,10 @@ function TodoItem({ id, isComplete, text, removeTodo }) {
 
       <input
         type="checkbox"
-        onChange={() => {
+        onChange={(e) => {
           setChecked(!checked);
           console.log(checked);
-        }}
+          e.target.parentElement.classList.toggle('active'); }}
         checked={checked}
       />
     </div>

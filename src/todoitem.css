@@ -9,6 +9,8 @@
   transform: translate(-50%);
   padding: 10px;
   border-radius: 10px;
+  transition: all 0.3s;
+  
 }
 .todo-container > p {
   font-size: 20px;
@@ -27,7 +29,13 @@
 .todo-container > input {
   vertical-align: text-bottom;
   float: left;
+  
 }
-.active {
+p.active {
   text-decoration: line-through;
+  
+} 
+div.active{
+  background-color: greenyellow;
 }
+  
